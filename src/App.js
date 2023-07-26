@@ -1,24 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import ListTouris from "./component/ListTouris";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Route, Routes} from "react-router";
+import Edit from "./component/Edit";
+import Add from "./component/add";
+import Detail from "./component/detail";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+          <Route path="/" element={<ListTouris/>}/>
+          <Route path="/edit/:id" element={<Edit/>}/>
+          <Route path="/add" element={<Add/>}/>
+          <Route path="/detail/:id" element={<Detail/>}/>
+      </Routes>
+    </>
   );
 }
 
